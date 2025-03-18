@@ -6,10 +6,11 @@ import pandas as pd
 import argparse
 
 
-def plot_frequencies(df, xlim, xvar='word_frequency', yvar='inverse_rank'):
+def plot_frequencies(df, xlim, xvar='word_frequency', yvar='rank'):
     """Plot a data frame of word_frequencies against inverse ranks."""
     scatplot = df.plot.scatter(x=xvar,
                                y=yvar,
+                               loglog=True,
                                figsize=[12,6],
                                grid=True,
                                xlim=xlim)
